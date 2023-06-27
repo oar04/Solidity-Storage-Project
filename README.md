@@ -1,67 +1,34 @@
-# SimpleStorage Solidity Contract
+# Solidity Contracts
 
-This repository contains a Solidity smart contract called `SimpleStorage`. The contract is a basic example that demonstrates various Solidity concepts such as variables, structs, arrays, and mappings. It also includes functions to store and retrieve values, as well as add new people to an array.
+This repository contains Solidity smart contracts that demonstrate various concepts and patterns. The contracts included are:
 
-## Contract Details
+- [SimpleStorage](#simplestorage-solidity-contract)
+- [StorageFactory](#storagefactory-solidity-contract)
+
+## SimpleStorage Solidity Contract
+
+The `SimpleStorage` contract is a basic example that demonstrates the usage of variables, structs, arrays, and mappings. It includes functions to store and retrieve values, as well as add new people to an array.
+
+## StorageFactory Solidity Contract
+
+The `StorageFactory` contract extends the functionality of the `SimpleStorage` contract by implementing factory patterns. It allows creating multiple instances of the `SimpleStorage` contract and provides functions to interact with these instances.
+
+### Contract Details
 
 - SPDX-License-Identifier: MIT
 - Solidity Version: >=0.6.0 < 0.9.0
 
-### Variables
+## Interacting with the Contract
 
-- `favNum`: An unsigned integer variable initialized to 0.
+1. Use the `createSimpleStorageContract` function to create a new instance of the `SimpleStorage` contract and add it to the `SimpleStorageArray`.
 
-### Struct
+2. Use the `sfStore` function to store a new value in a specific instance of the `SimpleStorage` contract. Provide the `_simpleStorageIndex` to indicate which instance to interact with and pass the desired `_simpleStorageNumber` value.
 
-- `People`: A struct that defines a new type consisting of two fields: `favNum` of type `uint256` and `name` of type `string`.
+3. Use the `sfGet` function to retrieve the current value stored in a specific instance of the `SimpleStorage` contract. Provide the `_simpleStorageIndex` to indicate which instance to interact with.
 
-### Arrays
-
-- `people`: A dynamic array of type `People[]` that stores a list of `People` objects.
-
-### Mapping
-
-- `nameToFavoriteNumber`: A mapping that associates a `string` name with a `uint256` favorite number.
-
-### Initial Person
-
-- `person`: An instance of the `People` struct with the initial values of `favNum` as 5 and `name` as "Osman".
-
-### Functions
-
-- `store(uint256 _favNum)`: Allows storing a new value in the `favNum` variable.
-
-- `retrieve()`: Returns the current value stored in the `favNum` variable.
-
-- `addPerson(string memory _name, uint256 _favNum)`: Adds a new person to the `people` array and associates their name with their favorite number in the `nameToFavoriteNumber` mapping.
-
-## Usage
-
-To interact with the `SimpleStorage` contract, you can use any Ethereum-compatible development environment or blockchain network.
-
-### Prerequisites
-
-- Solidity development environment (e.g., Remix, Truffle, Hardhat)
-- Ethereum wallet or provider
-
-### Deployment
-
-1. Compile the contract using the appropriate Solidity compiler version (>=0.6.0 < 0.9.0).
-
-2. Deploy the contract to the desired Ethereum network or local development blockchain.
-
-3. Once deployed, you can interact with the contract by calling its functions.
-
-### Interacting with the Contract
-
-1. Use the `store` function to set a new value for `favNum`.
-
-2. Use the `retrieve` function to retrieve the current value of `favNum`.
-
-3. Use the `addPerson` function to add a new person to the `people` array and associate their name with their favorite number in the `nameToFavoriteNumber` mapping.
 
 ## License
 
-This Solidity script is licensed under the MIT License. Please see the [LICENSE](LICENSE) file for more information.
+This project is licensed under the MIT License. Please see the [LICENSE](LICENSE) file for more information.
 
 **Note:** The SPDX-License-Identifier is provided as a standard way to specify the license within the code.
